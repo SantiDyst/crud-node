@@ -57,7 +57,6 @@
       <div class="container" > 
         <a href="/create" class="btn btn-outline-primary mt-4"><i class='bx  bxs-plus-circle bx-md'></i> </a>
 
-
         <table class="table table-bordered table-striped text-center mt-4 ">
 
           <thead class="table-dark">
@@ -79,8 +78,8 @@
                  <td><%=user.user %></td> 
                  <td><%=user.rol  %></td> 
                  <td> 
-                  <a href="/edit" class="btn btn-outline-info">editar</a>
-                  <a href="/delete" class="btn btn-outline-danger">borrar</a>
+                  <a href="/edit/<%= user.id %>" class="btn btn-outline-info">editar</a>
+                  <a href="/delete/<%= user.id %>" class="btn btn-outline-danger">borrar</a>
 
                  </td>
 

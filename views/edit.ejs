@@ -11,8 +11,7 @@
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-
-    <title>TABLA CRUD </title>
+    <title>EDITAR USUARIO </title>
     </head>
     <body>
    
@@ -53,29 +52,35 @@
         </div>
       </div>
       </nav>
-      <% if (user){ %>
 
       <!-- Formulario -->
+       
+      <% if (user){%>
+
       <div class="container mt-4"></div> 
         <div class="card border-secondary">
-          <div class="card-header">Editar Registro</div>
+          <div class="card-header">Nuevo Registro</div>
           <div class="card-body">
+            <form action="/update" method="POST">
+              <!--new -->
+              <input id="id" name="id" value="<%=user.id%>" hidden>
 
-            <form action="/save" method="POST">
-                <input id="id" name="id" value="<%=user.id%>" hidden>
-                <div class="mb-3">
-                <label for="user" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="user" name="user" value="<%=user.user%>" tabindex="1">
-                </div>
             <div class="mb-3">
-                <label for="user" class="form-label">Rol</label>
-                <select id="rol" name="rol" class="form-select" aria-label="Default seleect example">
-                    <option <%=user.rol=='admin'?"selected":''%> value="admin" selected>Admin</option>
-                    <option <%=user.rol=='data entry'?"selected":''%>value="data entry"> Data Entry </option>
-                </select>
-                </div>   
-                <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
-                <a href="/" class="btn btn-secondary">Cancelar</a>
+              <label for="user" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="user" name="user" value="<%=user.user%>" tabindex="1">
+            </div>
+
+         <div class="mb-3">
+            <label for="user" class="form-label">Rol</label>
+            <select id="rol" name="rol" class="form-select" aria-label="Default seleect example">
+            
+            <option <%=user.rol=='admin' ? "selected": '' %>  value="admin" selected>Admin</option>
+            <option <%=user.rol=='data entry' ? "selected": '' %> value="data entry"> Data Entry </option>
+            
+          </select>
+            </div>   
+            <button type="submit" class="btn btn-primary" tabindex="5">Editar</button>
+            <a href="/" class="btn btn-secondary">Cancelar</a>
           </form>
 
         </div>
@@ -83,8 +88,8 @@
         </div>
 
       </div>
-      <%}%>
 
+      <% } %>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
