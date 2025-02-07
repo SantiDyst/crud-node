@@ -12,10 +12,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-    <title>TABLA CRUD </title>
+    <title>Crear Usuario</title>
     </head>
+
     <body>
-   
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -60,23 +60,38 @@
           <div class="card-header">Nuevo Registro</div>
           <div class="card-body">
             <form action="/save" method="POST">
+
             <div class="mb-3">
-              <label for="user" class="form-label">Usuario</label>
+              <label for="user" class="form-label">*Nombre</label>
               <input type="text" class="form-control" id="user" name="user" tabindex="1">
             </div>
+
+            <!-- New_Options -->
+             <label for="gender">Genero:</label>
+              <select name="gender" id="gender">
+                  <option value="femenino"> Femenino</option> 
+                  <option value="masculino">Masculino</option>
+              </select>
+
+                <label for="monthly_salary">*Salario Mensual:</label>
+                <input type="number" name="monthly_salary" id="monthly_salary">
+            <!-- New_Options -->
+
          <div class="mb-3">
-            <label for="user" class="form-label">Rol</label>
-            <select id="rol" name="rol" class="form-select" aria-label="Default seleect example">
-            <option value="admin" selected>Admin</option>
-            <option value="data entry"> Data Entry </option>
-            </select>
-            </div>   
+           <label for="user" class="form-label">*Elija un Rol</label>
+              <select id="rol" name="rol" class="form-select" aria-label="Default seleect example">
+              
+                <option value="admin" selected>Admin</option>
+                <option value="data entry"> Data Entry </option>
+           </select>
+          </div>   
+
+         <!-- //boton_guardar -->
             <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
             <a href="/" class="btn btn-secondary">Cancelar</a>
-          </form>
+        </form>
 
         </div>
-
         </div>
 
       </div>

@@ -12,77 +12,53 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-    <title>TABLA CRUD </title>
+    <title>Inicio</title>
   </head>
+  
   <body>
-   
-    <!-- NAVBAR -->
+     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        <a class="navbar-brand"  href="#">Tabla de Usuarios</a>
         </div>
       </div>
-    </nav>
 
+    </nav>
       <div class="container" > 
         <a href="/create" class="btn btn-outline-primary mt-4"><i class='bx  bxs-plus-circle bx-md'></i> </a>
 
         <table class="table table-bordered table-striped text-center mt-4 ">
 
+          <!-- Titulos de la tabla -->
           <thead class="table-dark">
             <tr class="bg-primary text-white">
               <th scope="col">ID</th>
               <th scope="col">USUARIO</th>
               <th scope="col">ROL</th>
+              <th scope="col">GENERO</th>
+              <th scope="col">SALARIO</th>
+              <th scope="col">PERFIL</th>
               <th scope="col">ACCIONES</th>
-
             </tr>
-
           </thead>
 
+          <!-- Vista de Usuarios -->
           <tbody>
-
             <% results.forEach((user)=>{%>
               <tr>
-                 <td><%=user.id  %></td>
-                 <td><%=user.user %></td> 
-                 <td><%=user.rol  %></td> 
+                 <td><%=user.id  %>  </td>
+                 <td><%=user.user %> </td> 
+                 <td><%=user.rol  %> </td> 
+                 <td><%=user.gender %> </td> 
+                 <td><%=user.monthly_salary %></td>
                  <td> 
-                  <a href="/edit/<%= user.id %>" class="btn btn-outline-info">editar</a>
-                  <a href="/delete/<%= user.id %>" class="btn btn-outline-danger">borrar</a>
+                 <a href="/profile/<%= user.id %>">Ver perfil</a>
+                </td>
 
+                 <td> 
+                  <a href="/edit/<%= user.id %>" class="btn btn-outline-info">Editar</a>
+                  <a href="/delete/<%= user.id %>" class="btn btn-outline-danger">Borrar</a>
                  </td>
-
               </tr>
 
               <% })%>

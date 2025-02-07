@@ -4,6 +4,32 @@ const router = express.Router ();
 
 
 
+
+
+router.get ('/profile/:id',(req,res)=>{
+   const id = req.params.id;
+   conexion.query('SELECT *FROM users WHERE id=?',[id],(error,results)=>{
+      if (error){
+         throw error;
+      }else{
+         const user = results[0];
+
+         user.weekly_salary = user.monthly_salary / 4;
+         user.hourly_salary = user.monthly_salary / (4 * 30);
+
+
+
+         res.render('profile',{user:user} );
+      }
+
+   }
+
+ )
+
+} )
+
+
+//Capturar los usuarios y mostrar resultados
 router.get('/',(req,res)=> {
    
      conexion.query( 'SELECT * FROM users', (error,results)=>{
@@ -48,15 +74,15 @@ router.get('/',(req,res)=> {
                 }
       } )
 
+
+      
+
+
      } )
 
 
-
-
-
-
 const crud = require ('./controler/crud');
-router.post('/save',crud.save)
+router.post('/save',crud.save);
 router.post('/update',crud.update);
 
 
