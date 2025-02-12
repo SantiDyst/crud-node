@@ -34,10 +34,7 @@
             <tr class="bg-primary text-white">
               <th scope="col">ID</th>
               <th scope="col">USUARIO</th>
-              <th scope="col">ROL</th>
-              <th scope="col">GENERO</th>
-              <th scope="col">SALARIO</th>
-              <th scope="col">PERFIL</th>
+              <th scope="col">PERFILES</th>
               <th scope="col">ACCIONES</th>
             </tr>
           </thead>
@@ -48,11 +45,7 @@
               <tr>
                  <td><%=user.id  %>  </td>
                  <td><%=user.user %> </td> 
-                 <td><%=user.rol  %> </td> 
-                 <td><%=user.gender %> </td> 
-                 <td><%=user.monthly_salary %></td>
-                 <td> 
-                 <a href="/profile/<%= user.id %>">Ver perfil</a>
+                 <td><a href="/profile/<%= user.id %>">Ver perfil</a></td>
                 </td>
 
                  <td> 

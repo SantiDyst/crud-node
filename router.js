@@ -12,11 +12,11 @@ router.get ('/profile/:id',(req,res)=>{
       if (error){
          throw error;
       }else{
-         const user = results[0];
+          const user = results[0];
 
-         user.weekly_salary = user.monthly_salary / 4;
-         user.hourly_salary = user.monthly_salary / (4 * 30);
-
+         /* user.weekly_salary = user.monthly_salary / 4;
+         user.hourly_salary = user.monthly_salary / (4 * 30); */
+ 
 
 
          res.render('profile',{user:user} );

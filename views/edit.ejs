@@ -42,18 +42,24 @@
             </div>
 
             <div class="mb-3">
-              <label for="user" class="form-label">*Salario</label>
+              <label for="user" class="form-label">*DNI</label>
               <input type="text" class="form-control" id="user" name="monthly_salary" value="<%=user.monthly_salary%>" tabindex="1">
+            </div>
+
+
+            <div class="mb-3">
+              <label for="user" class="form-label">*Email</label>
+              <input type="text" class="form-control" id="user" name="email" value="<%=user.email%>" tabindex="1">
             </div>
 
             <div class="mb-3">
               <label for="user" class="form-label">*Genero</label>
               <select id="rol" name="gender" class="form-select" aria-label="Default seleect example">
-              
-              <option <%=user.gender=='femenino' ? "selected": '' %> value="femenino"> femenino</option>
-              <option <%=user.gender=='masculino' ? "selected": '' %> value="masculino"> masculino</option>
+                
+                <option <%=user.gender=='masculino' ? "selected": '' %> value="masculino"> masculino</option>
+                <option <%=user.gender=='femenino' ? "selected": '' %> value="femenino"> femenino</option>
 
-            </select>
+              </select>
               </div>  
 
          <div class="mb-3">
