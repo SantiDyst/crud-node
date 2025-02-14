@@ -50,7 +50,7 @@ exports.save = (req,res)=>{
         }
     
         
-        conexion.query('UPDATE users SET user=?, gender=?, monthly_salary=? WHERE id=?', [email,user, gender, monthly_salary, id], (error, results) => {
+        conexion.query('UPDATE users SET user=?, gender=?,monthly_salary=?,email=? WHERE id=?', [user, gender, monthly_salary,email, id], (error, results) => {
             if (error) {
                 console.error(error);
                 return res.status(500).send('Error al actualizar usuario');
