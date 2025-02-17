@@ -31,13 +31,15 @@ async function renderView(view, data) {
 }
 
 async function getDatabaseResults() {
-    const mysql = require('mysql2/promise'); // Usamos mysql2/promise para async/await
+    const mysql = require('mysql2/promise');
     const connection = await mysql.createConnection({
-        host: 'localhost', // Tu host
-        user: 'root', // Tu usuario
-        password: 'dugar123', // Tu contraseña
-        database: 'crud_node' // Tu base de datos
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
     });
+
+
 
     try {
         const [results] = await connection.execute('SELECT * FROM users'); // Tu consulta SQL
